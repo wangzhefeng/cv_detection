@@ -22,11 +22,11 @@
 # python libraries
 import os
 import sys
+import matplotlib.pyplot as plt
+import keras_ocr
 
 
 def one_example():
-    import matplotlib.pyplot as plt
-    import keras_ocr
     
     pipeline = keras_ocr.pipeline.Pipeline()
 

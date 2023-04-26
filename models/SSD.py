@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
 # ***************************************************
 # * File        : SSD.py
 # * Author      : Zhefeng Wang
@@ -12,7 +11,6 @@
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
 # ***************************************************
 
-
 # python libraries
 import os
 import sys
@@ -23,13 +21,14 @@ if os.path.join(_path, "../..") not in sys.path:
     sys.path.append(os.path.join(_path, "../.."))
 from math import sqrt
 import itertools
+
 import numpy as np
 import torch
 from torch import nn, Tensor
 import torch.nn.functional as F
 from torch.jit.annotations import Tuple, List
-from cv_classification.resnet.ResNet50 import resnet50
 
+from resnet.ResNet50 import resnet50
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]

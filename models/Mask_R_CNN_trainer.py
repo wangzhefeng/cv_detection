@@ -21,21 +21,23 @@ import gc
 
 from PIL import Image
 import matplotlib.pyplot as plt
-
 import torch
 from torchvision.transforms.functional import (
     pil_to_tensor,
     to_pil_image,
 )
 from torchvision.utils import draw_segmentation_masks
-from rcnn.Mask_R_CNN_pretrain import MaskRCNN_ResNet50_FPN_Weights
-from rcnn.Mask_R_CNN_pretrain import net
+from Mask_R_CNN import MaskRCNN_ResNet50_FPN_Weights
+from Mask_R_CNN import net
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+
+# ------------------------------
 # data path
+# ------------------------------
 img_urls, img_path = (
     [
         "https://www.luxurytravelmagazine.com/files/593/2/80152/luxury-travel-instagram_bu.jpg",

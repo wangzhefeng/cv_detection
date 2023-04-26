@@ -162,3 +162,5 @@ cython_debug/
 # custom
 .vscode/
 *.h5
+*.pt
+runs/

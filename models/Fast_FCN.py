@@ -19,8 +19,9 @@ import sys
 
 from torchvision.models.segmentation import (
     fcn_resnet50,
-    fcn_resnet101,
     FCN_ResNet50_Weights,
+    
+    fcn_resnet101,
     FCN_ResNet101_Weights,
 )
 

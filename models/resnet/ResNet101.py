@@ -1,31 +1,45 @@
 # -*- coding: utf-8 -*-
 
+
 # ***************************************************
-# * File        : yolo.py
+# * File        : ResNet101.py
 # * Author      : Zhefeng Wang
 # * Email       : wangzhefengr@163.com
-# * Date        : 2023-04-24
-# * Version     : 0.1.042419
+# * Date        : 2023-03-29
+# * Version     : 0.1.032911
 # * Description : description
-# * Link        : https://mp.weixin.qq.com/s/UBPbPhewk2sBa8td9wy-CA
+# * Link        : link
 # * Requirement : 相关模块版本需求(例如: numpy >= 2.1.0)
 # ***************************************************
+
 
 # python libraries
 import os
 import sys
+
 import torch
+from torch import nn
+from torchvision.models import (
+    resnet101,
+    ResNet101_Weights,
+    resnext101_32x8d,
+    ResNeXt101_32X8D_Weights,
+    resnext101_64x4d,
+    ResNeXt101_64X4D_Weights,
+    Wide_ResNet101_2_Weights,
+    wide_resnet101_2,
+)
+
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
 
 
-model = torch.hub.load("ultralytics/yolov5", "yolov5s")
+net = resnet101(weights = ResNet101_Weights.DEFAULT, progress = False)
+net.eval()
 
-"""
-cd yolov5 && python train.py --img 320 --batch 16 --epochs 50 --data carScr.yaml --weights last.pt
-cd yolov5 && python train.py --img 320 --batch 32 --epochs 10 --data carScr.yaml --weights yolo5s.pt --cache --evolve
-"""
+
+
 
 
 

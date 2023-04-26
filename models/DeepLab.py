@@ -20,12 +20,15 @@ import sys
 import torch
 from torchvision.models.segmentation import (
     deeplabv3,
-    deeplabv3_resnet50,
-    deeplabv3_resnet101,
-    deeplabv3_mobilenet_v3_large,
     DeepLabV3,
+    
+    deeplabv3_resnet50,
     DeepLabV3_ResNet50_Weights,
+    
+    deeplabv3_resnet101,
     DeepLabV3_ResNet101_Weights,
+    
+    deeplabv3_mobilenet_v3_large,
     DeepLabV3_MobileNet_V3_Large_Weights,
 )
 
