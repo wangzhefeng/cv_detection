@@ -40,3 +40,32 @@
 
 * [make sense](https://www.makesense.ai/)
 * [roboflow](https://app.roboflow.com/)
+
+
+# 模型类型
+
+* PyTorch(https://pytorch.org/)
+    - yolov5.pt
+* TorchScript(https://pytorch.org/docs/stable/jit.html)
+    - yolov5.torchscript
+* ONNX(https://onnx.ai/)
+    - yolov5.onnx
+* OpenVINO(https://docs.openvino.ai/latest/home.html)
+    - yolov5_openvino_model/
+* TensorRT(https://developer.nvidia.com/tensorrt)
+    - yolov5.engine
+* CoreML(https://github.com/apple/coremltools)
+    - yolov5.mlmodel
+* TensorFlow SavedModel(https://www.tensorflow.org/guide/saved_model?hl=zh-cn)
+    - yolov5_saved_model/
+* TensorFlow GraphDef(https://www.tensorflow.org/api_docs/python/tf/Graph)
+    - yolov5.pb
+* TensorFlow Lite(https://www.tensorflow.org/lite?hl=zh-cn)
+    - yolov5.tflite
+* TensorFlow Edge TPU(https://coral.ai/docs/edgetpu/models-intro/)
+    - yolov5_edgetpu.tflite
+* TensorFlow.js(https://www.tensorflow.org/js?hl=zh-cn)
+    - yolov5_web_model/
+* PaddlePaddle(https://github.com/PaddlePaddle)
+    - yolov5_paddle_model/
+

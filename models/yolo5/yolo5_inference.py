@@ -13,8 +13,12 @@
 
 # python libraries
 import os
+import io
+import base64
 import glob
+import threading
 from pathlib import Path
+
 import cv2
 from PIL import Image, ImageGrab
 import torch
@@ -22,13 +26,17 @@ import torch
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-data_dir = os.path.join(Path(__file__).parent.parent.parent, "data/example_images")
+data_dir = os.path.join(Path(__file__).parent.parent.parent, "data/images")
 
 # ------------------------------
 # model
 # ------------------------------
+# yolov5n
+# --------
 # model_v5n = torch.hub.load("ultralytics/yolov5", "yolov5n")
 
+# yolov5s
+# --------
 model_v5s = torch.hub.load(
     repo_or_dir = "ultralytics/yolov5", 
     model = "yolov5s", 
@@ -45,8 +53,9 @@ model_v5s = torch.hub.load(
 # model_v5s.classes = None  # (optional list) filter by class, i.e. = [0, 15, 16] for COCO persons, cats and dogs
 # model_v5s.max_det = 1000  # maximum number of detections per image
 # model_v5s.amp = False  # Automatic Mixed Precision (AMP) inference
-model_v5s.to(device)
 
+# yolov5m,...
+# --------
 # model_v5m = torch.hub.load("ultralytics/yolov5", "yolov5m")
 # model_v5l = torch.hub.load("ultralytics/yolov5", "yolov5l")
 # model_v5x = torch.hub.load("ultralytics/yolov5", "yolov5x")
@@ -60,11 +69,9 @@ model_v5s.to(device)
 # images
 # ------------------------------
 imgs = []
-
 # cloud image
 img_cloud = "https://ultralytics.com/images/zidane.jpg"
 imgs.append(img_cloud)
-
 # local data
 for img_name in ["zidane.jpg", "bus.jpg"]:
     img_dir = os.path.join(data_dir, img_name)
@@ -84,7 +91,9 @@ tensor_preds = model_v5s(imgs)  # default size 640
 # tensor_preds.print()
 # tensor_preds.show()
 # tensor_preds.save()
-# tensor_preds.crop()
+
+# Box-Cropped result
+crops = tensor_preds.crop(save = True)
 
 # tensor predictions result
 tensor_preds_img1 = tensor_preds.xyxy[0]
@@ -99,16 +108,14 @@ print(f"\ntensor preds of img4:\n {tensor_preds_img4}")
 # pandas prediction result
 pandas_preds = tensor_preds.pandas()
 print(f"\nres_pandas:\n {pandas_preds}")
-
-pandas_preds_img1 = pandas_preds.xyxy[0]
-pandas_preds_img2 = pandas_preds.xyxy[1]
-pandas_preds_img3 = pandas_preds.xyxy[2]
-pandas_preds_img4 = pandas_preds.xyxy[3]
+pandas_preds_img1 = pandas_preds.xyxy[0].sort_values("xmin").to_json(orient = "records")
+pandas_preds_img2 = pandas_preds.xyxy[1].sort_values("xmin").to_json(orient = "records")
+pandas_preds_img3 = pandas_preds.xyxy[2].sort_values("xmin").to_json(orient = "records")
+pandas_preds_img4 = pandas_preds.xyxy[3].sort_values("xmin").to_json(orient = "records")
 print(f"\npandas preds of img1:\n {pandas_preds_img1}")
 print(f"\npandas preds of img2:\n {pandas_preds_img2}")
 print(f"\npandas preds of img3:\n {pandas_preds_img3}")
 print(f"\npandas preds of img4:\n {pandas_preds_img4}")
-
 
 
 
