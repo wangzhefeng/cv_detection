@@ -1,10 +1,19 @@
 
 <details><summary>目录</summary><p>
 
-- [cv_detection](#TODO)
+- [Image Segmentation](#image-segmentation)
+- [Object Detection](#object-detection)
+  - [Face](#face)
+  - [Text Detection OCR](#text-detection-ocr)
+    - [模型](#模型)
+    - [Keras OCR](#keras-ocr)
+  - [YOLO](#yolo)
+    - [文档](#文档)
+    - [模型数据](#模型数据)
+    - [模型训练](#模型训练)
+    - [模型部署](#模型部署)
+- [参考](#参考)
 </p></details><p></p>
-
-# cv_detection
 
 # Image Segmentation
 
@@ -18,6 +27,11 @@
 
 # Object Detection
 
+* keypoint detection
+* object detection
+* object tracking
+* ocr
+
 ## Face
 
 * face recognition
@@ -27,9 +41,16 @@
 
 ## Text Detection OCR
 
-* CRNN
+### 模型
+
+* [CRNN](https://github.com/janzd/CRNN)
+* [CRAFT](https://github.com/clovaai/CRAFT-pytorch)
 * Differentiable Binarization
 
+### Keras OCR
+
+* [keras-ocr GitHub](https://github.com/faustomorales/keras-ocr)
+* [keras-ocr Doc](https://keras-ocr.readthedocs.io/en/latest/examples/fine_tuning_detector.html)
 
 ## YOLO
 
@@ -93,5 +114,3 @@
 
 
 # 参考
-
-
