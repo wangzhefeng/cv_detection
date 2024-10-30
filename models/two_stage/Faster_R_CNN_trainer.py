@@ -52,7 +52,7 @@ from torchvision.models.detection import (
 )
 from torchvision.utils import draw_bounding_boxes
 
-from Faster_R_CNN import net
+from models.two_stage.Faster_R_CNN import net
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]

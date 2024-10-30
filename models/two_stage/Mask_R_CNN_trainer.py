@@ -27,8 +27,8 @@ from torchvision.transforms.functional import (
     to_pil_image,
 )
 from torchvision.utils import draw_segmentation_masks
-from Mask_R_CNN import MaskRCNN_ResNet50_FPN_Weights
-from Mask_R_CNN import net
+from models.two_stage.Mask_R_CNN import MaskRCNN_ResNet50_FPN_Weights
+from models.two_stage.Mask_R_CNN import net
 
 # global variable
 LOGGING_LABEL = __file__.split('/')[-1][:-3]

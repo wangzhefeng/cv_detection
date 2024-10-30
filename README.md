@@ -3,15 +3,16 @@
 
 - [Image Segmentation](#image-segmentation)
 - [Object Detection](#object-detection)
-  - [Face](#face)
-  - [Text Detection OCR](#text-detection-ocr)
-    - [模型](#模型)
-    - [Keras OCR](#keras-ocr)
-  - [YOLO](#yolo)
-    - [文档](#文档)
-    - [模型数据](#模型数据)
-    - [模型训练](#模型训练)
-    - [模型部署](#模型部署)
+    - [Object Detection](#object-detection-1)
+    - [Face Detection](#face-detection)
+    - [Text Detection OCR](#text-detection-ocr)
+        - [模型](#模型)
+        - [Keras OCR](#keras-ocr)
+    - [YOLO](#yolo)
+        - [文档](#文档)
+        - [模型数据](#模型数据)
+        - [模型训练](#模型训练)
+        - [模型部署](#模型部署)
 - [参考](#参考)
 </p></details><p></p>
 
@@ -27,12 +28,14 @@
 
 # Object Detection
 
+## Object Detection
+
 * keypoint detection
 * object detection
 * object tracking
 * ocr
 
-## Face
+## Face Detection
 
 * face recognition
 * face detection
@@ -110,7 +113,5 @@
         - `yolov5_web_model/`
     - [PaddlePaddle](https://github.com/PaddlePaddle)
         - `yolov5_paddle_model/`
-
-
 
 # 参考

@@ -27,8 +27,8 @@ from torchvision.transforms.functional import (
     to_pil_image,
 )
 from torchvision.utils import draw_segmentation_masks
-from Fast_FCN import FCN_ResNet50_Weights
-from Fast_FCN import net
+from models.others.Fast_FCN import FCN_ResNet50_Weights
+from models.others.Fast_FCN import net
 
 
 # global variable

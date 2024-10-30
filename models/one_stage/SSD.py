@@ -244,6 +244,7 @@ class Encoder(object):
 
 
 class DefaultBoxes(object):
+    
     def __init__(self, fig_size, feat_size, steps, scales, aspect_ratios, scale_xy=0.1, scale_wh=0.2):
         self.fig_size = fig_size   # 输入网络的图像大小 300
         # [38, 19, 10, 5, 3, 1]
@@ -635,6 +636,7 @@ class Loss(nn.Module):
 
     
 class SSD300(nn.Module):
+    
     def __init__(self, num_classes=21,backbone=None):
         super(SSD300, self).__init__()
         if backbone is None:
